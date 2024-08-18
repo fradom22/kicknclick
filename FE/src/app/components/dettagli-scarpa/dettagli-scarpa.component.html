@@ -1,0 +1,38 @@
+<div class="w-full flex-col">
+
+  <div class="flex flex-wrap justify-center gap-10 mt-20">
+    <div
+      class="w-64 h-50 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ scarpa.marca | titlecase }}
+        {{ scarpa.modello | titlecase }}</p>
+      <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prezzo
+        {{ scarpa.prezzo }} EUR</p>
+      <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Misura
+        {{ scarpa.misura }}</p>
+      <div class="w-full flex justify-center">
+        <ng-container *ngIf="scarpa.immagine">
+          <img src="data:image/png;base64,{{scarpa.immagine}}" class="w-20"/>
+        </ng-container>
+      </div>
+      <div class="flex gap-3 mt-2">
+        <button class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
+    focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
+     dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                (click)="acquista()">Acquista
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursor-pointer flex justify-center mt-10">
+    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+      <a (click)="goToHomepage()" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Torna alla
+        homepage</a>
+    </p>
+  </div>
+
+  <ng-container *ngIf="errorMessage">
+    <p style="color: red;">{{errorMessage}}</p>
+  </ng-container>
+
+</div>
