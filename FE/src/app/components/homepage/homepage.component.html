@@ -8,9 +8,7 @@
         <ul
           class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
-            <button type="submit" (click)="logout()" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-                focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Logout
+            <button type="submit" (click)="logout()" class="btn-custom">Logout
             </button>
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
           </li>
@@ -22,9 +20,7 @@
     <div
       class="space-y-5 w-64 h-40 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <h2 class="text-xl">Modifica i tuoi dati</h2>
-      <button type="submit" (click)="goToModificaUtente()" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-                focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Modifica
+      <button type="submit" (click)="goToModificaUtente()" class="btn-custom">Modifica
       </button>
     </div>
 
@@ -32,17 +28,13 @@
       <div
         class="space-y-5 w-64 h-40 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h2 class="text-xl">Visualizza le scarpe</h2>
-        <button type="submit" (click)="goToScarpeGlobali()" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-                focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Visualizza
+        <button type="submit" (click)="goToScarpeGlobali()" class="btn-custom">Visualizza
         </button>
       </div>
       <div
         class="space-y-5 w-64 h-40 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h2 class="text-xl">I tuoi acquisti</h2>
-        <button type="submit" (click)="goToPropriAcquisti()" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-                focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Visualizza
+        <button type="submit" (click)="goToPropriAcquisti()" class="btn-custom">Visualizza
         </button>
       </div>
     </ng-container>
@@ -51,17 +43,13 @@
       <div
         class="space-y-5 w-64 h-40 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h2 class="text-xl">Pubblica una scarpa</h2>
-        <button type="submit" (click)="goToPubblicaScarpa()" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-                focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Pubblica
+        <button type="submit" (click)="goToPubblicaScarpa()" class="btn-custom">Pubblica
         </button>
       </div>
       <div
         class="space-y-5 w-64 h-40 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h2 class="text-xl">Scarpe pubblicate</h2>
-        <button type="submit" (click)="goToScarpePubblicate()" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-                focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Visualizza
+        <button type="submit" (click)="goToScarpePubblicate()" class="btn-custom">Visualizza
         </button>
       </div>
     </ng-container>
@@ -70,17 +58,13 @@
       <div
         class="space-y-5 w-64 h-40 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h2 class="text-lg">Visualizza tutti gli utenti</h2>
-        <button type="submit" (click)="goToUtentiGlobali()" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-              focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-               dark:hover:bg-primary-700 dark:focus:ring-primary-800">Visualizza
+        <button type="submit" (click)="goToUtentiGlobali()" class="btn-custom">Visualizza
         </button>
       </div>
       <div
         class="space-y-5 w-64 h-40 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h2 class="text-lg">Visualizza tutti i prodotti</h2>
-        <button type="submit" (click)="goToTuttiProdotti()" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-              focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-               dark:hover:bg-primary-700 dark:focus:ring-primary-800">Visualizza
+        <button type="submit" (click)="goToTuttiProdotti()" class="btn-custom">Visualizza
         </button>
       </div>
     </ng-container>

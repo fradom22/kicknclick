@@ -1,3 +1,4 @@
+<div class="total">
 <div class="w-full flex-col">
   <div class="ml-5">
     <h2>Tutte le scapre</h2>
@@ -26,9 +27,7 @@
         </select>
       </div>
       <div class="flex-col w-[15%] mt-7">
-        <button class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-        focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-         dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+        <button class="btn-custom"
                 (click)="resetFiltri()">Reset filtri
         </button>
       </div>
@@ -55,14 +54,10 @@
           </div>
           <ng-container *ngIf="scarpa.stato === 'DISPONIBILE'">
             <div class="flex gap-3 mt-2">
-              <button class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-        focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-         dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              <button class="btn-custom"
                       (click)="modifica(scarpa.prodottoId)">Modifica
               </button>
-              <button class="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none
-        focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-         dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              <button class="btn-custom"
                       (click)="elimina(scarpa.prodottoId)">Elimina
               </button>
             </div>
@@ -72,9 +67,7 @@
               Venduta, nessuna recensione</p>
           </ng-container>
           <ng-container *ngIf="scarpa.stato === 'RECENSITO'">
-            <button class="mt-3 w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-        focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-         dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            <button class="btn-custom"
                     (click)="visualizzaRecensione(scarpa.prodottoId)">
               {{ scarpa.prodottoId === prodottoIdSelezionato ? 'Nascondi recensione' : 'Visualizza recensione' }}
             </button>
@@ -110,4 +103,5 @@
     <p style="color: red;">{{ errorMessage }}</p>
   </ng-container>
 
+</div>
 </div>
