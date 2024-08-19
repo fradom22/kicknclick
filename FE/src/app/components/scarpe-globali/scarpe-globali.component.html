@@ -1,66 +1,79 @@
-<div class="total">
-<div class="w-full flex-col">
-  <div class="ml-5">
-    <h2>Tutte le scapre</h2>
-    <div class="flex gap-4 mt-5">
-      <div class="flex-col w-[15%]">
-        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ricerca tramite marca</label>
+<div class="total full-height flex flex-col">
+  <!-- Header con logo e titolo centrato -->
+  <nav class="border-gray-200 dark:bg-gray-900 flex items-center justify-between p-4 mt-8">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="absolute top-10 left-12 p-5 flex-shrink-0">
+        <img src="assets/images/logo.png" alt="Logo" class="h-12">
+      </div>
+      <div class="flex-1 flex justify-center">
+        <b class="text-2xl text-white ">SCARPE DISPONIBILI</b>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenuto principale -->
+  <div class="flex flex-col flex-grow">
+    <!-- Filtri -->
+    <div class="filters-container mt-8 mx-5">
+      <div class="filter-item">
+        <label class="block mb-2 text-sm font-medium text-white dark:text-white">Ricerca tramite marca</label>
         <input
-          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           [(ngModel)]="ricercaMarca">
       </div>
-      <div class="flex-col w-[15%]">
-        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ricerca tramite modello</label>
+      <div class="filter-item">
+        <label class="block mb-2 text-sm font-medium text-white dark:text-white">Ricerca tramite modello</label>
         <input
-          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           [(ngModel)]="ricercaModello">
       </div>
-      <div class="flex-col w-[15%] mt-7">
+      <div class="filter-item reset-button">
         <button class="btn-custom"
                 (click)="resetFiltri()">Reset filtri
         </button>
       </div>
     </div>
-  </div>
 
 
-  <div class="flex flex-wrap justify-center gap-10 mt-20">
 
-    <ng-container *ngFor="let scarpa of scarpe">
-      <ng-container *ngIf="scarpa.stato === 'DISPONIBILE' && (ricercaMarca === '' || scarpa.marca.toLowerCase().includes(ricercaMarca.toLowerCase()))
-          && (ricercaModello === '' || scarpa.modello.toLowerCase().includes(ricercaModello.toLowerCase()))">
-        <div
-          class="w-64 h-50 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ scarpa.marca | titlecase }}
-            {{ scarpa.modello | titlecase }}</p>
-          <div class="w-full flex justify-center">
-            <ng-container *ngIf="scarpa.immagine">
-              <img src="data:image/png;base64,{{scarpa.immagine}}" class="w-20"/>
-            </ng-container>
+    <!-- Elenco scarpe -->
+    <div class="flex flex-wrap justify-center gap-10 mt-20 mx-5">
+      <ng-container *ngFor="let scarpa of scarpe">
+        <ng-container *ngIf="scarpa.stato === 'DISPONIBILE' && (ricercaMarca === '' || scarpa.marca.toLowerCase().includes(ricercaMarca.toLowerCase()))
+            && (ricercaModello === '' || scarpa.modello.toLowerCase().includes(ricercaModello.toLowerCase()))">
+          <div class="w-64 h-50 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ scarpa.marca | titlecase }}
+              {{ scarpa.modello | titlecase }}</p>
+            <div class="w-full flex justify-center">
+              <ng-container *ngIf="scarpa.immagine">
+                <img src="data:image/png;base64,{{scarpa.immagine}}" class="w-20"/>
+              </ng-container>
+            </div>
+            <div class="flex gap-3 mt-2">
+              <button class="btn-custom"
+                      (click)="goToDettagliScarpa(scarpa.prodottoId)">Dettagli
+              </button>
+            </div>
           </div>
-          <div class="flex gap-3 mt-2">
-            <button class="btn-custom"
-                    (click)="goToDettagliScarpa(scarpa.prodottoId)">Dettagli
-            </button>
-          </div>
-        </div>
+        </ng-container>
       </ng-container>
-    </ng-container>
-    <ng-container *ngIf="!scarpe.length">
-      <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nessuna scarpa disponibile</p>
+      <ng-container *ngIf="!scarpe.length">
+        <p class="block mb-2 text-sm font-medium text-white dark:text-white">Nessuna scarpa disponibile</p>
+      </ng-container>
+    </div>
+
+    <!-- Link alla homepage -->
+    <div class="footer">
+      <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+        <a (click)="goToHomepage()" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
+          Torna alla homepage
+        </a>
+      </p>
+    </div>
+
+    <!-- Messaggio di errore -->
+    <ng-container *ngIf="errorMessage">
+      <p style="color: red;">{{ errorMessage }}</p>
     </ng-container>
   </div>
-
-  <div class="cursor-pointer flex justify-center mt-10">
-    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-      <a (click)="goToHomepage()" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Torna alla
-        homepage</a>
-    </p>
-  </div>
-
-  <ng-container *ngIf="errorMessage">
-    <p style="color: red;">{{ errorMessage }}</p>
-  </ng-container>
-
-</div>
 </div>

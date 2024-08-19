@@ -21,3 +21,67 @@
 .btn-custom:hover {
   background-color: #cedf33; /* Verde più scuro */
 }
+
+.full-height {
+  min-height: 100vh; /* Assicura che la sezione occupi almeno l'altezza della finestra */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('src/assets/images/wallpaper.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+
+  /* Riduci la larghezza dei filtri e centrali */
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    max-width: 600px; /* Imposta una larghezza massima per i filtri */
+  }
+
+  .filter-item {
+    flex: 1;
+    min-width: 180px; /* Larghezza minima più piccola per i filtri */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.5rem; /* Riduce il margine tra gli elementi */
+  }
+
+  /* Input e select dei filtri */
+  .filter-item input,
+  .filter-item select {
+    padding: 0.5rem; /* Riduce il padding interno */
+    font-size: 0.75rem; /* Riduce la dimensione del font */
+    border-width: 1px; /* Riduce lo spessore del bordo */
+    border-radius: 0.25rem; /* Riduce il raggio del bordo */
+    width: 100%; /* Assicura che l'input occupi tutta la larghezza del contenitore */
+  }
+
+  /* Pulsante di reset */
+  .reset-button button {
+    padding: 0.5rem 1rem; /* Riduce il padding del pulsante */
+    font-size: 0.75rem; /* Riduce la dimensione del font */
+    border-width: 4px; /* Riduce lo spessore del bordo */
+    border-radius: 0.25rem; /* Riduce il raggio del bordo */
+  }
+
+  /* Stile aggiuntivo per una migliore visualizzazione */
+  .filter-item label {
+    font-size: 0.75rem; /* Riduce la dimensione del font per le etichette */
+    margin-bottom: 0.25rem; /* Riduce il margine inferiore delle etichette */
+  }
+
+  /* Centra il link in fondo alla pagina */
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: auto; /* Spinge il contenuto verso il fondo */
+  }

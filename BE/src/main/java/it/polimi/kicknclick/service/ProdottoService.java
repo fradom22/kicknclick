@@ -79,7 +79,6 @@ public class ProdottoService {
 
         //Salvo l'immagine nella cartella
         File file = new File(FOLDER_PATH + immagine.getOriginalFilename());
-        immagine.transferTo(file);
     }
 
     /**

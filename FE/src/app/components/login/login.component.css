@@ -14,10 +14,16 @@
   font-weight: 500;
   text-align: center;
   width: 100%;
-  border: 5px solid white; /* Bordo bianco */
+  border: 2px solid #757575; /* Bordo bianco */
 }
 
 .btn-custom:hover {
   background-color: #cedf33; /* Verde più scuro */
 }
 
+
+.custom-border {
+  border-color: #e3f45b; /* Colore del bordo */
+  border-width: 7px; /* Spessore del bordo */
+  border-style: solid; /* Tipo di bordo (solid, dashed, dotted, etc.) */
+}
