@@ -3,6 +3,7 @@ import {ProdottoService} from "../../services/prodotto.service";
 import {MessageResponse} from "../../dtos/response/MessageResponse";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
+import { ProdottoResponse } from 'src/app/dtos/response/ProdottoResponse';
 
 /**
  * Componente per la pubblicazione di una scarpa
@@ -36,7 +37,7 @@ export class PubblicaScarpaComponent implements OnInit {
     }
     //Se è presente l'id del prodotto nel path, allora vengono visualizzati i dettagli della scarpa ed eventualmente modificarli
     this.prodottoService.dettagliScarpa(this.idProdotto).subscribe({
-      next: (res: any) => {
+      next: (res: ProdottoResponse) => {
         this.marca = res.marca;
         this.modello = res.modello;
         this.prezzo = res.prezzo;

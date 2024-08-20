@@ -4,6 +4,7 @@ import {ProdottoService} from "../../services/prodotto.service";
 import {ProdottoResponse} from "../../dtos/response/ProdottoResponse";
 import {MessageResponse} from "../../dtos/response/MessageResponse";
 import {AcquistoService} from "../../services/acquisto.service";
+import { HttpErrorResponse } from '@angular/common/http';
 
 /**
  * Componente per la visualizzazione degli acquisti effettuati dall'utente loggato.
@@ -40,7 +41,7 @@ export class PropriAcquistiComponent implements OnInit {
       next: (result: ProdottoResponse[]) => {
         this.scarpe = result;
       },
-      error: (error: any) => {
+      error: (error: HttpErrorResponse) => {
         console.error(error);
         this.errorMessage = 'Errore durante il recupero degli acquisti';
       }
@@ -63,7 +64,7 @@ export class PropriAcquistiComponent implements OnInit {
         this.scarpe = this.scarpe.map(
           scarpa => scarpa.prodottoId === this.prodottoIdSelezionato ? {...scarpa, stato: 'RECENSITO'} : scarpa);
       },
-      error: (error: any) => {
+      error: (error: HttpErrorResponse) => {
         console.error(error);
         this.errorMessage = 'Errore durante la recensione del prodotto';
       }

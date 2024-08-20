@@ -41,7 +41,7 @@ export class TuttiProdottiComponent implements OnInit {
       next: (result: ProdottoResponse[]) => {
         this.scarpe = result;
       },
-      error: (error: any) => {
+      error: (error: HttpErrorResponse) => {
         console.log(error);
         this.errorMessage = 'Errore nella ricerca dei prodotti';
       }
