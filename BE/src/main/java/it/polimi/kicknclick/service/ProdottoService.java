@@ -52,18 +52,21 @@ public class ProdottoService {
         ControlloDati.controlloNumeri(List.of(request.getPrezzo(), request.getMisura(), sellerId));
         ControlloDati.controlloStringhe(List.of(request.getModello(), request.getMarca()));
 
-        //Controllo se l'immagine è presente
-        if (immagine == null) {
+        // Controllo se l'immagine è presente e valida
+        if (immagine == null || immagine.isEmpty()) {
             throw new Exception("Immagine non presente");
         }
 
-        //Controllo se l'utente esiste
+        // Controllo se l'utente esiste
         Optional<Utente> utenteExists = utenteRepository.findByUtenteId(sellerId);
         if (utenteExists.isEmpty()) {
             throw new Exception("Utente non trovato");
         }
 
-        //Costruisco il prodotto con il builder
+        // Costruisco il percorso completo del file
+        String imagePath = FOLDER_PATH + immagine.getOriginalFilename();
+
+        // Costruisco il prodotto con il builder
         Prodotto prodotto = new ProdottoBuilder()
                 .marca(request.getMarca())
                 .modello(request.getModello())
@@ -72,14 +75,17 @@ public class ProdottoService {
                 .utente(utenteExists.get())
                 .nomeImmagine(immagine.getOriginalFilename())
                 .tipoImmagine(immagine.getContentType())
-                .percorsoImmagine(FOLDER_PATH + immagine.getOriginalFilename())
+                .percorsoImmagine(imagePath)
                 .build();
 
+        // Salvo il prodotto nel repository
         prodottoRepository.save(prodotto);
 
-        //Salvo l'immagine nella cartella
-        File file = new File(FOLDER_PATH + immagine.getOriginalFilename());
+        // Salvo l'immagine nella cartella specificata
+        File file = new File(imagePath);
+        immagine.transferTo(file);
     }
+
 
     /**
      * Questo metodo permette di ottenere tutti i prodotti non venduti.
