@@ -89,17 +89,29 @@
     </ng-container>
   </div>
 
-  <ng-container *ngIf="viewRecensione">
-    <div class="w-full flex justify-center mt-3">
-      <div class="flex-col">
-        <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Voto: {{ votoRecensione }}</p>
-        <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Testo: {{ testoRecensione }}</p>
-        <ng-container *ngIf="immagine">
-          <img src="data:image/png;base64,{{immagine}}" class="w-20"/>
-        </ng-container>
+<ng-container *ngIf="viewRecensione">
+  <div (click)="viewRecensione = false" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+    <div class="relative mx-auto w-[25%] h-[24%]">
+      <div
+        class="border-0 rounded-lg shadow-lg relative flex flex-col w-full h-full bg-[#F5F5F5] outline-none focus:outline-none">
+        <div class="p-5 max-h-[95vh] overflow-y-auto mt-[2%]">
+          <div class="flex-center flex-col space-y-8 mt-5">
+            <div>
+              <div class="flex-col">
+                <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Voto: {{ votoRecensione }}</p>
+                <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Testo: {{ testoRecensione }}</p>
+                <ng-container *ngIf="immagine">
+                  <img src="data:image/png;base64,{{immagine}}" class="w-20"/>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </ng-container>
+  </div>
+  <div class="opacity-25 fixed inset-0 z-40 bg-black"></div>
+</ng-container>
 
   <div class="footer">
     <p class="text-sm font-light text-gray-500 dark:text-gray-400">

@@ -28,7 +28,7 @@
           [(ngModel)]="ricercaModello">
       </div>
       <div class="filter-item reset-button">
-        <button class="btn-custom"
+        <button class="btn-custom-filter"
                 (click)="resetFiltri()">Reset filtri
         </button>
       </div>
@@ -41,7 +41,7 @@
       <ng-container *ngFor="let scarpa of scarpe">
         <ng-container *ngIf="scarpa.stato === 'DISPONIBILE' && (ricercaMarca === '' || scarpa.marca.toLowerCase().includes(ricercaMarca.toLowerCase()))
             && (ricercaModello === '' || scarpa.modello.toLowerCase().includes(ricercaModello.toLowerCase()))">
-          <div class="w-64 h-50 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-64 h-50 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 custom-form">
             <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ scarpa.marca | titlecase }}
               {{ scarpa.modello | titlecase }}</p>
             <div class="w-full flex justify-center">

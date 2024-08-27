@@ -1,9 +1,18 @@
-<div class="total">
+<div class="full-height">
 <div class="w-full flex-col">
-
+  <nav class="border-gray-200 dark:bg-gray-900 flex items-center justify-between p-4 mt-8">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="absolute top-10 left-12 p-5 flex-shrink-0">
+        <img src="assets/images/logo.png" alt="Logo" class="h-12">
+      </div>
+      <div class="flex-1 flex justify-center">
+        <b class="text-2xl text-white">DETTAGLI SCARPA</b>
+      </div>
+    </div>
+  </nav>
   <div class="flex flex-wrap justify-center gap-10 mt-20">
     <div
-      class="w-64 h-50 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      class="w-64 h-50 p-6 flex-col text-center content-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-24 custom-form">
       <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ scarpa.marca | titlecase }}
         {{ scarpa.modello | titlecase }}</p>
       <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prezzo
@@ -23,10 +32,11 @@
     </div>
   </div>
 
-  <div class="cursor-pointer flex justify-center mt-10">
-    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-      <a (click)="goToHomepage()" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Torna alla
-        homepage</a>
+  <div class="footer">
+    <p class="">
+      <a (click)="goToHomepage()" class="font-medium text-primary-600 hover:underline dark:text-primary-500 ">
+        Torna alla homepage
+      </a>
     </p>
   </div>
 

@@ -248,11 +248,11 @@ public class ProdottoService {
 
         //Prendo tutti gli acquisti del cliente
         List<Acquisto> acquisti = acquistoRepository.findAllByUtente(customerExists.get());
-
         List<ProdottoResponse> response = new ArrayList<>();
 
         //Aggiungo alla lista tutti i prodotti acquistati
         for (Acquisto a : acquisti) {
+            System.out.println(a.getProdotto().getProdottoId());
             response.add(new ProdottoResponse(
                     a.getProdotto().getProdottoId(),
                     a.getProdotto().getMarca(),

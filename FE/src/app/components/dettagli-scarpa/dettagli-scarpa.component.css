@@ -1,8 +1,12 @@
-.total {
-  background-image: url('src/assets/images/wallpaper.png'); /* Sostituisci con il percorso della tua immagine */
-  background-size: cover; /* Fa in modo che l'immagine copra l'intera area della pagina */
-  background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
-  background-position: center center; /* Centra l'immagine sia orizzontalmente che verticalmente */
+.full-height {
+  min-height: 100vh; /* Assicura che la sezione occupi almeno l'altezza della finestra */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('src/assets/images/wallpaper.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .btn-custom {
@@ -14,10 +18,34 @@
   font-weight: 500;
   text-align: center;
   width: 100%;
-  border: 5px solid white; /* Bordo bianco */
+  border: 2px solid #757575; /* Bordo bianco */
 }
 
 .btn-custom:hover {
   background-color: #cedf33; /* Verde più scuro */
 }
 
+
+/* Centra il link in fondo alla pagina */
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: auto; /* Spinge il contenuto verso il fondo */
+}
+
+.custom-form {
+  width: 70%; /* Aumenta la larghezza dei form */
+  max-width: 300px; /* Limita la larghezza massima */
+  height: 250px; /* Imposta un'altezza fissa per i form */
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 7px solid #e3f45b; /* Aggiungi un bordo colorato */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Distanza tra il titolo e il pulsante */
+  align-items: center; /* Centra orizzontalmente il contenuto */
+  text-align: center;
+}
